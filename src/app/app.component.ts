@@ -17,4 +17,4 @@ export class AppComponent {
     new Task('Begin brainstorming possible JavaScript group projects'),
     new Task('Add README file to last few Angular repos on GitHub')
   ];
-}
+} 
