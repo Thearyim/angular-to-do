@@ -7,9 +7,8 @@ import { Task } from './models/task.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  editTask() {
-    alert("Time to edit a task!");
-  }
+
+
   currentFocus: string = 'Angular Homework';
   currentTime = new Date();
   month: number = this.currentTime.getMonth() + 1;
@@ -20,6 +19,7 @@ export class AppComponent {
     new Task('Begin brainstorming possible JavaScript group projects', 2),
     new Task('Add README file to last few Angular repos on GitHub', 1)
   ];
+
   priorityColor(currentTask) {
     if (currentTask.priority === 3) {
       return "bg-danger";
@@ -28,5 +28,15 @@ export class AppComponent {
     } else {
       return "bg-info";
     }
+  }
+  selectedTask: null;
+
+    editTask(clickedTask) {
+
+      this.selectedTask = clickedTask;
+    }
+    
+    finishedEditing() {
+    this.selectedTask = null;
   }
 }
